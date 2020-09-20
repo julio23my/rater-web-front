@@ -1,0 +1,16 @@
+.movieDetails__Star {
+    color: orange;
+}
+
+.movieDetails__StarRating {
+    color: purple;
+}
+
+.movieDetails__RateContainer {
+    border-top: 2px solid purple;
+}
+
+.movieDetails__RateContainer > svg {
+    font-size: 2em;
+    cursor: pointer;
+}
