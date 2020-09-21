@@ -5,13 +5,14 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Route, BrowserRouter } from "react-router-dom";
 import Login from "./Components/Login";
+import { CookiesProvider } from "react-cookie";
 
 const routing = (
   <BrowserRouter>
-    <div>
+    <CookiesProvider>
       <Route exact path="/" component={Login} />
       <Route exact path="/movie" component={App} />
-    </div>
+    </CookiesProvider>
   </BrowserRouter>
 );
 ReactDOM.render(routing, document.getElementById("root"));

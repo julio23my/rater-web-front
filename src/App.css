@@ -30,12 +30,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  font-size: 0.8em;
-}
 h2 {
   margin:0;
   font-size: 2em;
@@ -55,7 +49,3 @@ h1 {
   transform: rotate(30deg);
 }
 
-.login {
-  width: 50%;
-  margin: 50px 25px;
-}

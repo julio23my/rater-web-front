@@ -3,11 +3,11 @@
 }
 
 .movieDetails__StarRating {
-    color: purple;
+    color: orange;
 }
 
 .movieDetails__RateContainer {
-    border-top: 2px solid purple;
+    border-top: 1px solid lightgray;
 }
 
 .movieDetails__RateContainer > svg {

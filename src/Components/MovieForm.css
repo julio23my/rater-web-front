@@ -1,0 +1,16 @@
+.movieForm > input {
+    width: 50% !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.movieForm > textarea {
+    width: 75% !important;
+
+}
+
+.movieForm > button {
+    margin-top: 50px;
+    text-transform: inherit !important;
+    background-color: lightgray;
+    color: white;
+}

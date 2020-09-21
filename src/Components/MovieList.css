@@ -1,9 +1,25 @@
 .movieList__Item {
     display: grid;
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: 0.90fr auto auto;
 }
 
 .movieList__Item span {
     margin: 16px 5px;
     font-size: 1.2em;
+}
+.movieList__List > button {
+    margin-top: 50px;
+    text-transform: inherit !important;
+    background-color: lightgray;
+    color: white;
+}
+input, textarea{
+     flex: 1;
+    border-radius: 30px;
+    padding: 10px;
+    border: none;
+    color: blue;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
