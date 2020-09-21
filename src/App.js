@@ -2,11 +2,15 @@ import React, {Component} from 'react';
 import './App.css';
 import MovieList from "./Components/MovieList";
 import MovieDetails from "./Components/MovieDetails";
+import MovieForm from "./Components/MovieForm";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+
 
 class App extends Component {
     state = {
         movies: [],
-        selectedMovie: null
+        selectedMovie: null,
+        editedMovie: null
     }
 
 
@@ -24,7 +28,7 @@ class App extends Component {
     };
 
     loadMovie = movie => {
-        this.setState({selectedMovie:movie})
+        this.setState({selectedMovie:movie, editedMovie:null})
     };
 
     movieDeleted = selmovie => {
@@ -35,6 +39,26 @@ class App extends Component {
     };
 
     editClicked = selmovie => {
+        this.setState({editedMovie: selmovie});
+
+
+
+    };
+
+    newMovie = () => {
+        this.setState({editedMovie: {title: '', description: ''}});
+
+
+
+    };
+    cancelForm = () => {
+        this.setState({editedMovie: null});
+
+
+
+    };
+    addMovie = movie => {
+        this.setState({movies :[...this.state.movies, movie] });
 
 
 
@@ -43,11 +67,21 @@ class App extends Component {
     render(){
         return (
             <div className="app">
-               <h1> Movie Rater</h1>
+               <h1><FontAwesomeIcon icon="film" />
+                   <span>
+                   Movie Rater
+               </span></h1>
                 <div className="app__Layout">
                 <MovieList movies={this.state.movies} movieClicked={this.loadMovie}
-                movieDeleted={this.movieDeleted} editClicked={this.editClicked}/>
-                <MovieDetails movie={this.state.selectedMovie} updateMovie={this.loadMovie}/>
+                movieDeleted={this.movieDeleted} editClicked={this.editClicked} newMovie={this.newMovie}/>
+                <div>
+                    { !this.state.editedMovie ? (
+                        <MovieDetails movie={this.state.selectedMovie} updateMovie={this.loadMovie}/>
+
+                    ) : (<MovieForm movie={this.state.editedMovie} cancelForm={this.cancelForm} newMovie={this.addMovie}
+                    editedMovie={this.loadMovie}/>) }
+
+                </div>
                 </div>
             </div>
           );

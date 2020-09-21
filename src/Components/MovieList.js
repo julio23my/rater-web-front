@@ -22,6 +22,10 @@ function MovieList(props) {
             .catch( error => console.log(error))
     };
 
+    const newMovie = () => {
+      props.newMovie();
+    };
+
 
     return(
         <div className="movieList__List">
@@ -39,6 +43,7 @@ function MovieList(props) {
                     </div>
                 )
             })}
+            <button onClick={newMovie}>Add new</button>
         </div>
     );
 }
